@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace Proj4
 {
     public partial class Form1 : Form
     {
-        ArvoreAVL<Cidade>  arvore = new ArvoreAVL<Cidade>();
+        ArvoreAVL<Cidade> arvore = new ArvoreAVL<Cidade>();
         public Form1()
         {
             InitializeComponent();
@@ -18,7 +15,7 @@ namespace Proj4
 
         private void tpCadastro_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -68,9 +65,18 @@ namespace Proj4
         private void btnBuscarCidade_Click(object sender, EventArgs e)
         {
             Cidade cidadeProcurada = new Cidade(txtNomeCidade.Text, 0, 0);
+
             if (arvore.Existe(cidadeProcurada))
             {
                 pbMapa.CreateGraphics().FillEllipse(Brushes.Red, (float)arvore.Atual.Info.X, (float)arvore.Atual.Info.Y, 10, 10);
+                List<Ligacao> lista =  cidadeProcurada.ListarLigacaoCidade();
+                for(int i = 0; i <= lista.Count - 1; i++)
+                {
+                    dgvLigacoes.Rows.Add();
+                    dgvLigacoes[0, i].Value = lista[i].Destino.ToString();
+                    dgvLigacoes[1, i].Value = lista[i].Distancia.ToString();
+
+                }
             }
             else
                 MessageBox.Show("Cidade não encontrada!");
