@@ -90,6 +90,8 @@ namespace Proj4
 
         }
 
+        
+
         public void GravarRegistro(BinaryWriter arquivo)
         {
 

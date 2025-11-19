@@ -48,6 +48,19 @@ namespace Proj4
                 MessageBox.Show("Cidade já existe!");
         }
 
+        public void LerArquivo(string linha)
+        {
+            Console.WriteLine(arquivo is null);
+            string linhaDeDados = arquivo.ReadLine();
+
+            //Palavra = linhaDeDados.Substring(inicioPalavra, tamanhoPalavra);
+            Console.WriteLine(linhaDeDados);
+            ligacoes.Atual.Info.Origem = linhaDeDados.Split(';').ToString();
+            ligacoes.Atual.Info.Destino = linhaDeDados.Split(';', ';').ToString();
+            ligacoes.Atual.Info.Distancia = linhaDeDados.Split().to();
+            ligacoes.Atual = ligacoes.Atual.Prox;
+        }
+
         private void btnExcluirCidade_Click(object sender, EventArgs e)
         {
             Cidade cidadeProcurada = new Cidade(txtNomeCidade.Text, 0, 0);
