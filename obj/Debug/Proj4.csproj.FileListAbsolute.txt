@@ -1,0 +1,21 @@
+G:\Chico\0Cotuca\anos letivos\2025\disciplinas\ED\Projetos\Proj4-Caminhos de Trem São Paulo\Proj4\bin\Debug\Proj4.exe.config
+G:\Chico\0Cotuca\anos letivos\2025\disciplinas\ED\Projetos\Proj4-Caminhos de Trem São Paulo\Proj4\bin\Debug\Proj4.exe
+G:\Chico\0Cotuca\anos letivos\2025\disciplinas\ED\Projetos\Proj4-Caminhos de Trem São Paulo\Proj4\bin\Debug\Proj4.pdb
+G:\Chico\0Cotuca\anos letivos\2025\disciplinas\ED\Projetos\Proj4-Caminhos de Trem São Paulo\Proj4\obj\Debug\Proj4.csproj.AssemblyReference.cache
+G:\Chico\0Cotuca\anos letivos\2025\disciplinas\ED\Projetos\Proj4-Caminhos de Trem São Paulo\Proj4\obj\Debug\Proj4.Form1.resources
+G:\Chico\0Cotuca\anos letivos\2025\disciplinas\ED\Projetos\Proj4-Caminhos de Trem São Paulo\Proj4\obj\Debug\Proj4.Properties.Resources.resources
+G:\Chico\0Cotuca\anos letivos\2025\disciplinas\ED\Projetos\Proj4-Caminhos de Trem São Paulo\Proj4\obj\Debug\Proj4.csproj.GenerateResource.cache
+G:\Chico\0Cotuca\anos letivos\2025\disciplinas\ED\Projetos\Proj4-Caminhos de Trem São Paulo\Proj4\obj\Debug\Proj4.csproj.CoreCompileInputs.cache
+G:\Chico\0Cotuca\anos letivos\2025\disciplinas\ED\Projetos\Proj4-Caminhos de Trem São Paulo\Proj4\obj\Debug\Proj4.exe
+G:\Chico\0Cotuca\anos letivos\2025\disciplinas\ED\Projetos\Proj4-Caminhos de Trem São Paulo\Proj4\obj\Debug\Proj4.pdb
+G:\Chico\0Cotuca\anos letivos\2025\disciplinas\ED\Projetos\Proj4-Caminhos de Trem São Paulo\Proj4\obj\Debug\Proj4.exe.config
+C:\Users\u24134\Documents\GitHub\ProjetoIV-CadastroDeCidades\bin\Debug\Proj4.exe.config
+C:\Users\u24134\Documents\GitHub\ProjetoIV-CadastroDeCidades\bin\Debug\Proj4.exe
+C:\Users\u24134\Documents\GitHub\ProjetoIV-CadastroDeCidades\bin\Debug\Proj4.pdb
+C:\Users\u24134\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.csproj.AssemblyReference.cache
+C:\Users\u24134\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.Form1.resources
+C:\Users\u24134\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.Properties.Resources.resources
+C:\Users\u24134\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.csproj.GenerateResource.cache
+C:\Users\u24134\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.csproj.CoreCompileInputs.cache
+C:\Users\u24134\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.exe
+C:\Users\u24134\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.pdb
