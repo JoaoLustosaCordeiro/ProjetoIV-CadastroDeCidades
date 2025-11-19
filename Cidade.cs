@@ -90,7 +90,10 @@ namespace Proj4
 
         }
 
-        
+        public void PreencherLigacao(string destino, int distancia)
+        {
+
+        }
 
         public void GravarRegistro(BinaryWriter arquivo)
         {

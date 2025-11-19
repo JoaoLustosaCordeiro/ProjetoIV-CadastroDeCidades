@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Proj4
@@ -48,17 +50,19 @@ namespace Proj4
                 MessageBox.Show("Cidade já existe!");
         }
 
-        public void LerArquivo(string linha)
+        public void LerArquivo(StreamReader arquivo)
         {
-            Console.WriteLine(arquivo is null);
             string linhaDeDados = arquivo.ReadLine();
 
-            //Palavra = linhaDeDados.Substring(inicioPalavra, tamanhoPalavra);
             Console.WriteLine(linhaDeDados);
-            ligacoes.Atual.Info.Origem = linhaDeDados.Split(';').ToString();
-            ligacoes.Atual.Info.Destino = linhaDeDados.Split(';', ';').ToString();
-            ligacoes.Atual.Info.Distancia = linhaDeDados.Split().to();
-            ligacoes.Atual = ligacoes.Atual.Prox;
+            string cidade = linhaDeDados.Substring(0, linhaDeDados.IndexOf(';')).ToString();
+            Cidade cidadeProcurada = new Cidade(cidade, 0, 0);
+            if (arvore.Existe(cidadeProcurada))
+            {
+                string destino = linhaDeDados.Substring(cidade.Length, linhaDeDados.IndexOf(';')).ToString();
+                int distancia = int.Parse(linhaDeDados.Substring(cidade.Length + destino.Length));
+                arvore.Atual.Info.PreencherLigacao(destino, distancia);
+            }
         }
 
         private void btnExcluirCidade_Click(object sender, EventArgs e)
