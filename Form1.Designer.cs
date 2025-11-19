@@ -335,7 +335,7 @@
             this.udY.DecimalPlaces = 4;
             this.udY.Location = new System.Drawing.Point(327, 57);
             this.udY.Maximum = new decimal(new int[] {
-            820,
+            1,
             0,
             0,
             0});
@@ -357,7 +357,7 @@
             this.udX.DecimalPlaces = 4;
             this.udX.Location = new System.Drawing.Point(123, 57);
             this.udX.Maximum = new decimal(new int[] {
-            1280,
+            1,
             0,
             0,
             0});
@@ -414,6 +414,7 @@
             this.pbMapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMapa.TabIndex = 0;
             this.pbMapa.TabStop = false;
+            this.pbMapa.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbMapa_MouseDown);
             // 
             // tpArvore
             // 

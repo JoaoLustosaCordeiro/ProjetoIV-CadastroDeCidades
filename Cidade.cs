@@ -65,6 +65,28 @@ namespace Proj4
 
         public void LerRegistro(BinaryReader arquivo, long qualRegistro)
         {
+            if (arquivo != null)  // arquivo foi aberto pela aplicação
+                try
+                {
+                    long qtosBytesAPular = qualRegistro * TamanhoRegistro;
+
+                    arquivo.BaseStream.Seek(qtosBytesAPular, SeekOrigin.Begin);
+
+                    char[] umNome = new char[tamanhoNome];
+
+                    umNome = arquivo.ReadChars(tamanhoNome);
+                    string nomeLido = "";
+                    for (int i = 0; i < tamanhoNome; i++)
+                        nomeLido += umNome[i];
+                    Nome = nomeLido;
+
+                    X = arquivo.ReadDouble();
+                    Y = arquivo.ReadDouble();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
 
         }
 
