@@ -125,6 +125,7 @@ namespace AgendaAlfabetica
                 ultimo.Prox = novoNo;
             ultimo = novoNo;
             quantosNos++;
+            Console.WriteLine("Número de nós na lista: " + quantosNos);
         }
 
         public List<Dado> Listar()

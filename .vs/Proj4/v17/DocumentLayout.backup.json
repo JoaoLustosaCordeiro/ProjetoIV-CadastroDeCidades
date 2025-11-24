@@ -1,30 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\",
+  "WorkspaceRootPath": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|c:\\users\\u24146\\documents\\github\\projetoiv-cadastrodecidades\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|c:\\users\\u24134\\documents\\github\\projetoiv-cadastrodecidades\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\cidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|solutionrelative:cidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\noarvoreavl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|c:\\users\\u24134\\documents\\github\\projetoiv-cadastrodecidades\\listasimples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|solutionrelative:listasimples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\noarvoreavl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|solutionrelative:noarvoreavl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\ligacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|solutionrelative:ligacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\arvoreavl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|solutionrelative:arvoreavl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\arvoreavl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|solutionrelative:arvoreavl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|c:\\users\\u24134\\documents\\github\\projetoiv-cadastrodecidades\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\cidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|solutionrelative:cidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\ligacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6740BFC1-3F71-402F-87E5-DFF5FD2CEB47}|Proj4.csproj|solutionrelative:ligacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 21,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,10 +59,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{80c411e8-fd5e-4b16-914b-0d9d84172cc1}"
             },
             {
               "$type": "Bookmark",
@@ -94,10 +98,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
@@ -106,16 +106,46 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{80c411e8-fd5e-4b16-914b-0d9d84172cc1}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAALMBAAAAAAAAAAAswLkBAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T19:47:49.049Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ListaSimples.cs",
+              "DocumentMoniker": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\ListaSimples.cs",
+              "RelativeDocumentMoniker": "ListaSimples.cs",
+              "ToolTip": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\ListaSimples.cs",
+              "RelativeToolTip": "ListaSimples.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAADwv38AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T19:14:47.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Form1.cs [Design]*",
+              "RelativeToolTip": "Form1.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-19T12:18:42.655Z",
               "EditorCaption": " [Design]"
@@ -124,11 +154,11 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "NoArvoreAVL.cs",
-              "DocumentMoniker": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\NoArvoreAVL.cs",
+              "DocumentMoniker": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\NoArvoreAVL.cs",
               "RelativeDocumentMoniker": "NoArvoreAVL.cs",
-              "ToolTip": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\NoArvoreAVL.cs",
+              "ToolTip": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\NoArvoreAVL.cs",
               "RelativeToolTip": "NoArvoreAVL.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-19T11:54:44.207Z",
               "EditorCaption": ""
@@ -137,50 +167,50 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAcwDoAAABLAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Form1.cs*",
+              "RelativeToolTip": "Form1.cs*",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAwDMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-19T11:07:58.423Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Cidade.cs",
-              "DocumentMoniker": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Cidade.cs",
+              "DocumentMoniker": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Cidade.cs",
               "RelativeDocumentMoniker": "Cidade.cs",
-              "ToolTip": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Cidade.cs",
+              "ToolTip": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Cidade.cs",
               "RelativeToolTip": "Cidade.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAADwv1wAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAADwv1oAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-19T10:57:44.157Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Ligacao.cs",
-              "DocumentMoniker": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Ligacao.cs",
+              "DocumentMoniker": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Ligacao.cs",
               "RelativeDocumentMoniker": "Ligacao.cs",
-              "ToolTip": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Ligacao.cs",
+              "ToolTip": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\Ligacao.cs",
               "RelativeToolTip": "Ligacao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-19T10:57:48.346Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ArvoreAVL.cs",
-              "DocumentMoniker": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\ArvoreAVL.cs",
+              "DocumentMoniker": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\ArvoreAVL.cs",
               "RelativeDocumentMoniker": "ArvoreAVL.cs",
-              "ToolTip": "C:\\Users\\u24146\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\ArvoreAVL.cs",
+              "ToolTip": "C:\\Users\\u24134\\Documents\\GitHub\\ProjetoIV-CadastroDeCidades\\ArvoreAVL.cs",
               "RelativeToolTip": "ArvoreAVL.cs",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAEwMYAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAPcAAAAAAAAAAAAtwMYAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-19T10:59:01.916Z",
               "EditorCaption": ""

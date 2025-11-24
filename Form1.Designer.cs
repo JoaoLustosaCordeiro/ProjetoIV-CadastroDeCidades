@@ -63,6 +63,7 @@
             this.tpArvore = new System.Windows.Forms.TabPage();
             this.pnlArvore = new System.Windows.Forms.Panel();
             this.dlgAbrir = new System.Windows.Forms.OpenFileDialog();
+            this.dlgSavlar = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.tpCadastro.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -449,6 +450,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Projeto 4 2025 - Cadastro de Cidades e Caminhos - Busca de Caminhos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tpCadastro.ResumeLayout(false);
@@ -506,6 +508,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     private System.Windows.Forms.Panel pnlArvore;
     private System.Windows.Forms.OpenFileDialog dlgAbrir;
-  }
+        private System.Windows.Forms.SaveFileDialog dlgSavlar;
+    }
 }
 
