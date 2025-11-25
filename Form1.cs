@@ -168,16 +168,14 @@ namespace Proj4
             string destino = txtNovoDestino.Text;
             Cidade cidadeDestino = new Cidade(destino, 0, 0);
 
-            string distancia = numericUpDown1.Text;
-
             if (arvore.Existe(cidadeDestino) && arvore.Existe(cidadeProcurada))
             {
-                Ligacao ligacao = new Ligacao() { Origem = nomeCidade.TrimEnd(), Destino = destino, Distancia = int.Parse(distancia) };
+                Ligacao ligacao = new Ligacao() { Origem = nomeCidade, Destino = destino.TrimEnd(), Distancia = 0 };
                 arvore.Atual.Info.ligacoes.RemoverDado(ligacao);
                 arvore.Existe(cidadeDestino);
-                Ligacao ligacao2 = new Ligacao() { Origem = destino.TrimEnd(), Destino = nomeCidade, Distancia = int.Parse(distancia) };
+                Ligacao ligacao2 = new Ligacao() { Origem = destino.TrimEnd(), Destino = nomeCidade, Distancia = 0 };
                 arvore.Atual.Info.ligacoes.RemoverDado(ligacao2);
-                MessageBox.Show("Ligação incluída!" + destino + distancia);
+                MessageBox.Show("Ligação incluída!" + destino);
             }
             else
                 MessageBox.Show("Cidade não encontrada!");
