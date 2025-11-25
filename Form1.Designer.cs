@@ -167,6 +167,7 @@
             this.btnBuscarCaminho.TabIndex = 2;
             this.btnBuscarCaminho.Text = "Buscar caminhos";
             this.btnBuscarCaminho.UseVisualStyleBackColor = true;
+            this.btnBuscarCaminho.Click += new System.EventHandler(this.btnBuscarCaminho_Click);
             // 
             // cbxCidadeDestino
             // 

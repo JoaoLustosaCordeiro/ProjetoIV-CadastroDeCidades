@@ -10,6 +10,7 @@ namespace Proj4
     {
         ArvoreAVL<Cidade> arvore;
         bool incluir, alterar = false;
+        Grafo grafo;
 
         public Form1()
         {
@@ -29,6 +30,7 @@ namespace Proj4
         private void Form1_Load(object sender, EventArgs e)
         {
             arvore = new ArvoreAVL<Cidade>();
+            grafo = new Grafo(dgvRotas);
             arvore.LerArquivoDeRegistros("../../Dados/cidades.dat");
             StreamReader arquivo = new StreamReader("../../Dados/GrafoOnibusSaoPaulo.txt");
             LerArquivo(arquivo);
@@ -198,6 +200,22 @@ namespace Proj4
                 g.FillEllipse(Brushes.Green, (x), (y), 10, 10);
                 g.DrawString(nome, SystemFonts.DefaultFont, Brushes.Black, (x), (y) - 15);
             }
+        }
+
+        private void btnBuscarCaminho_Click(object sender, EventArgs e)
+        {
+            string nomeCidade = txtNomeCidade.Text;
+            Cidade cidadeProcurada = new Cidade(nomeCidade, 0, 0);
+
+            string destino = cbxCidadeDestino.Text;
+            Cidade cidadeDestino = new Cidade(destino, 0, 0);
+
+            if (arvore.Existe(cidadeDestino) && arvore.Existe(cidadeProcurada))
+            {
+
+            }
+            else
+                MessageBox.Show("Cidade não encontrada!");
         }
 
         private void pbMapa_MouseDown(object sender, MouseEventArgs e)

@@ -245,20 +245,19 @@ public class Grafo
 
     }
 
-    public List<(string Rotulo, int Distancia)> CaminhosComDistancias(string rotuloInicio, string rotuloFim)
+    public List<(string Rotulo, int Distancia)> Caminho(string rotuloInicio, string rotuloFim)
     {
-        int indiceInicio = ObterIndiceVertice(rotuloInicio);
-        int indiceFim = ObterIndiceVertice(rotuloFim);
+        int indiceInicio = ObterIndiceVertice(rotuloInicio.Trim());
+        int indiceFim = ObterIndiceVertice(rotuloFim.Trim());
 
         if (indiceInicio == -1 || indiceFim == -1)
-        {
             return null; 
-        }
 
         foreach (var vertice in vertices)
         {
             vertice.FoiVisitado = false;
         }
+
         vertices[indiceInicio].FoiVisitado = true; 
 
         for (int j = 0; j < quantosVertices; j++)
@@ -272,9 +271,7 @@ public class Grafo
             int menorIndice = ObterMenor(); 
 
             if (menorIndice == -1)
-            {
                 break; 
-            }
 
             verticeAtual = menorIndice;
             doInicioAteAtual = percurso[menorIndice].distancia;
@@ -306,14 +303,12 @@ public class Grafo
 
     public int ObterIndiceVertice(string rotulo)
     {
-        if (string.IsNullOrEmpty(rotulo))
+        if (rotulo == null)
             return -1;
-
-        string rotuloFormatado = rotulo.Trim();
 
         for (int i = 0; i < quantosVertices; i++)
         {
-            if (vertices[i].Rotulo == rotuloFormatado)
+            if (vertices[i].Rotulo == rotulo)
                 return i;
         }
 
