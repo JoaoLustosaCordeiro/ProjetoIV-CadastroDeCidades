@@ -10,6 +10,7 @@ namespace Proj4
     {
         ArvoreAVL<Cidade> arvore;
         bool incluir, alterar = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Proj4
             arvore.LerArquivoDeRegistros("../../Dados/cidades.dat");
             StreamReader arquivo = new StreamReader("../../Dados/GrafoOnibusSaoPaulo.txt");
             LerArquivo(arquivo);
+            pbMapa.Invalidate();
         }
 
         private void pnlArvore_Paint(object sender, PaintEventArgs e)
@@ -48,7 +50,6 @@ namespace Proj4
             Cidade novaCidade = new Cidade(txtNomeCidade.Text, Convert.ToDouble(udX.Text), Convert.ToDouble(udY.Text));
             if (!arvore.Existe(novaCidade))
             {
-                pbMapa.Refresh();
                 incluir = true;
                 // pbMapa.CreateGraphics().FillEllipse(Brushes.Red, ((float)novaCidade.X)*pbMapa.Width, ((float)novaCidade.Y)*pbMapa.Height, 10, 10);
             }
@@ -87,13 +88,14 @@ namespace Proj4
                 if (arvore.Atual.Esq == null && arvore.Atual.Dir == null)
                 {
                     arvore.ExcluirNaoBalanceado(cidadeProcurada);
-                    pbMapa.Refresh();
+                    pbMapa.Invalidate();
                 }
                 else
                     MessageBox.Show("Cidade tem conexões!");
             }
             else
                 MessageBox.Show("Cidade não encontrada!");
+            pbMapa.Invalidate();
         }
 
         private void btnBuscarCidade_Click(object sender, EventArgs e)
@@ -103,14 +105,14 @@ namespace Proj4
 
             if (arvore.Existe(cidadeProcurada))
             {
-                pbMapa.Refresh();
+                pbMapa.Invalidate();
                 udX.Value = (decimal)arvore.Atual.Info.X;
                 udY.Value = (decimal)arvore.Atual.Info.Y;
                 pbMapa.CreateGraphics().FillEllipse(Brushes.Red, ((float)arvore.Atual.Info.X) * pbMapa.Width, ((float)arvore.Atual.Info.Y) * pbMapa.Height, 10, 10);
+                pbMapa.CreateGraphics().DrawString(arvore.Atual.Info.Nome, SystemFonts.DefaultFont, Brushes.Black, ((float)arvore.Atual.Info.X) * pbMapa.Width, ((float)arvore.Atual.Info.Y) * pbMapa.Height);
                 List<Ligacao> lista = arvore.Atual.Info.ListarLigacaoCidade();
                 for (int i = 0; i <= lista.Count - 1; i++)
                 {
-                    Console.WriteLine(lista[i].Destino.ToString(), lista[i].Distancia.ToString());
                     dgvLigacoes.Rows.Add();
                     dgvLigacoes[0, i].Value = lista[i].Destino.ToString();
                     dgvLigacoes[1, i].Value = lista[i].Distancia.ToString();
@@ -181,6 +183,23 @@ namespace Proj4
                 MessageBox.Show("Cidade não encontrada!");
         }
 
+        private void pbMapa_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            List<Cidade> listaCidades = new List<Cidade>();
+            float x, y;
+            string nome;
+            arvore.VisitarEmOrdem(ref listaCidades);
+            for (int i = 0; i < listaCidades.Count; i++)
+            {
+                x = ((float)listaCidades[i].X) * pbMapa.Width;
+                y = ((float)listaCidades[i].Y) * pbMapa.Height;
+                nome = listaCidades[i].Nome;
+                g.FillEllipse(Brushes.Green, (x), (y), 10, 10);
+                g.DrawString(nome, SystemFonts.DefaultFont, Brushes.Black, (x), (y) - 15);
+            }
+        }
+
         private void pbMapa_MouseDown(object sender, MouseEventArgs e)
         {
             if (incluir)
@@ -188,7 +207,7 @@ namespace Proj4
                 Cidade novaCidade = new Cidade(txtNomeCidade.Text, (double)e.X / pbMapa.Width, (double)e.Y / pbMapa.Height);
                 arvore.InserirBalanceado(novaCidade);
                 // MessageBox.Show(novaCidade.X.ToString(), novaCidade.Y.ToString());
-                pbMapa.Refresh();
+                pbMapa.Invalidate();  
                 pbMapa.CreateGraphics().FillEllipse(Brushes.Red, ((float)novaCidade.X) * pbMapa.Width, ((float)novaCidade.Y) * pbMapa.Height, 10, 10);
                 incluir = false;
             }
@@ -197,7 +216,7 @@ namespace Proj4
                 // MessageBox.Show(novaCidade.X.ToString(), novaCidade.Y.ToString());
                 arvore.Atual.Info.X = (double)e.X / pbMapa.Width;
                 arvore.Atual.Info.Y = (double)e.Y / pbMapa.Height;
-                pbMapa.Refresh();
+                pbMapa.Invalidate();
                 pbMapa.CreateGraphics().FillEllipse(Brushes.Red, ((float)arvore.Atual.Info.X) * pbMapa.Width, ((float)arvore.Atual.Info.Y) * pbMapa.Height, 10, 10);
                 alterar = false;
             }
