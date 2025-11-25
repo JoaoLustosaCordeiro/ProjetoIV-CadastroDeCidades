@@ -220,9 +220,10 @@ public class Grafo
         return indiceDaMinima;
     }
 
-    public void AjustarMenorCaminho(ListBox lista)
+    public void AjustarMenorCaminho()
     {
         for (int coluna = 0; coluna < quantosVertices; coluna++)
+        {
             if (!vertices[coluna].FoiVisitado) // para cada vértice ainda não visitado
             {
                 // acessamos a distância desde o vértice atual (pode ser infinity)
@@ -238,99 +239,84 @@ public class Grafo
                 {
                     percurso[coluna].verticePai = verticeAtual;
                     percurso[coluna].distancia = doInicioAteMargem;
-                    ExibirTabela(lista);
                 }
             }
-        lista.Items.Add("==================Caminho ajustado==============");
-        lista.Items.Add(" ");
+        }
+
     }
 
-    public void ExibirTabela(ListBox lista)
+    public List<(string Rotulo, int Distancia)> CaminhosComDistancias(string rotuloInicio, string rotuloFim)
     {
-        string dist = "";
-        lista.Items.Add("Vértice\tVisitado?\tPeso\tVindo de");
+        int indiceInicio = ObterIndiceVertice(rotuloInicio);
+        int indiceFim = ObterIndiceVertice(rotuloFim);
+
+        if (indiceInicio == -1 || indiceFim == -1)
+        {
+            return null; 
+        }
+
+        foreach (var vertice in vertices)
+        {
+            vertice.FoiVisitado = false;
+        }
+        vertices[indiceInicio].FoiVisitado = true; 
+
+        for (int j = 0; j < quantosVertices; j++)
+        {
+            int distTemp = matrizDeAjacencias[indiceInicio, j];
+            percurso[j] = new DistOriginal(indiceInicio, distTemp);
+        }
+
         for (int i = 0; i < quantosVertices; i++)
         {
-            if (percurso[i].distancia == infinity)
-                dist = "inf";
-            else
-                dist = Convert.ToString(percurso[i].distancia);
-            lista.Items.Add(vertices[i].Rotulo + "\t" + vertices[i].FoiVisitado +
-            "\t\t" + dist + "\t" + vertices[percurso[i].verticePai].Rotulo);
+            int menorIndice = ObterMenor(); 
+
+            if (menorIndice == -1)
+            {
+                break; 
+            }
+
+            verticeAtual = menorIndice;
+            doInicioAteAtual = percurso[menorIndice].distancia;
+            vertices[menorIndice].FoiVisitado = true;
+
+            AjustarMenorCaminho();
         }
-        lista.Items.Add("-----------------------------------------------------");
+
+        if (percurso[indiceFim].distancia == infinity)
+        {
+            return null; 
+        }
+
+        List<(string Rotulo, int Distancia)> caminhos = new List<(string Rotulo, int Distancia)>();
+        int atual = indiceFim;
+
+        while (atual != indiceInicio)
+        {
+            caminhos.Add((vertices[atual].Rotulo, percurso[atual].distancia));
+            atual = percurso[atual].verticePai; 
+        }
+
+        caminhos.Add((vertices[indiceInicio].Rotulo, 0));
+
+        caminhos.Reverse();
+
+        return caminhos;
     }
 
-
-    public string Caminho(int inicioDoPercurso, int finalDoPercurso, ListBox lista)
+    public int ObterIndiceVertice(string rotulo)
     {
-        for (int j = 0; j < quantosVertices; j++)
-            vertices[j].FoiVisitado = false;
-        vertices[inicioDoPercurso].FoiVisitado = true;
-        for (int j = 0; j < quantosVertices; j++)
-        {
-            // anotamos no vetor percurso a distância entre o inicioDoPercurso e cada vértice
-            // se não há ligação direta, o valor da distância será infinity
-            int tempDist = matrizDeAjacencias[inicioDoPercurso, j];
-            percurso[j] = new DistOriginal(inicioDoPercurso, tempDist);
-        }
-        for (int nTree = 0; nTree < quantosVertices; nTree++)
-        {
-            // Procuramos a saída não visitada do vértice inicioDoPercurso com a menor distância
-            int indiceDoMenor = ObterMenor();
-            // e anotamos essa menor distância
-            int distanciaMinima = percurso[indiceDoMenor].distancia;
-            // o vértice com a menor distância passa a ser o vértice atual
-            // para compararmos com a distância calculada em AjustarMenorCaminho()
-            verticeAtual = indiceDoMenor;
-            doInicioAteAtual = percurso[indiceDoMenor].distancia;
-            // visitamos o vértice com a menor distância desde o inicioDoPercurso
-            vertices[verticeAtual].FoiVisitado = true;
-            AjustarMenorCaminho(lista);
-        }
-        return ExibirPercursos(inicioDoPercurso, finalDoPercurso, lista);
-    }
+        if (string.IsNullOrEmpty(rotulo))
+            return -1;
 
-    public string ExibirPercursos(int inicioDoPercurso, int finalDoPercurso,
- ListBox lista)
-    {
-        string resultado = "";
-        for (int j = 0; j < quantosVertices; j++)
+        string rotuloFormatado = rotulo.Trim();
+
+        for (int i = 0; i < quantosVertices; i++)
         {
-            resultado += vertices[j].Rotulo + "=";
-            if (percurso[j].distancia == infinity)
-                resultado += "inf";
-            else
-                resultado += percurso[j].distancia + " ";
-            string pai = vertices[percurso[j].verticePai].Rotulo;
-            resultado += "(" + pai + ") ";
+            if (vertices[i].Rotulo == rotuloFormatado)
+                return i;
         }
-        lista.Items.Add(resultado);
-        lista.Items.Add(" ");
-        lista.Items.Add(" ");
-        lista.Items.Add("Caminho entre " + vertices[inicioDoPercurso].Rotulo +
-        " e " + vertices[finalDoPercurso].Rotulo);
-        lista.Items.Add(" ");
-        int onde = finalDoPercurso;
-        Stack<string> pilha = new Stack<string>();
-        int cont = 0;
-        while (onde != inicioDoPercurso)
-        {
-            onde = percurso[onde].verticePai;
-            pilha.Push(vertices[onde].Rotulo);
-            cont++;
-        }
-        resultado = "";
-        while (pilha.Count != 0)
-        {
-            resultado += pilha.Pop();
-            if (pilha.Count != 0)
-                resultado += " --> ";
-        }
-        if ((cont == 1) && (percurso[finalDoPercurso].distancia == infinity))
-            resultado = "Não há caminho";
-        else
-            resultado += " --> " + vertices[finalDoPercurso].Rotulo;
-        return resultado;
+
+        return -1; 
     }
 }

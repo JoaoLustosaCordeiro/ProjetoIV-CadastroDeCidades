@@ -29,3 +29,4 @@ C:\Users\u24146\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.csp
 C:\Users\u24146\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.csproj.CoreCompileInputs.cache
 C:\Users\u24146\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.exe
 C:\Users\u24146\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.pdb
+C:\Users\u24134\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.exe.config
