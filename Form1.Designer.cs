@@ -230,6 +230,7 @@
             this.btnExcluirCaminho.TabIndex = 9;
             this.btnExcluirCaminho.Text = "-";
             this.btnExcluirCaminho.UseVisualStyleBackColor = true;
+            this.btnExcluirCaminho.Click += new System.EventHandler(this.btnExcluirCaminho_Click);
             // 
             // btnIncluirCaminho
             // 
@@ -239,6 +240,7 @@
             this.btnIncluirCaminho.TabIndex = 8;
             this.btnIncluirCaminho.Text = "+";
             this.btnIncluirCaminho.UseVisualStyleBackColor = true;
+            this.btnIncluirCaminho.Click += new System.EventHandler(this.btnIncluirCaminho_Click);
             // 
             // label5
             // 

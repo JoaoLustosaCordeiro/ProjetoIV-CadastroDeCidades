@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -99,6 +98,7 @@ namespace Proj4
 
         private void btnBuscarCidade_Click(object sender, EventArgs e)
         {
+            dgvLigacoes.Rows.Clear();
             Cidade cidadeProcurada = new Cidade(txtNomeCidade.Text, 0, 0);
 
             if (arvore.Existe(cidadeProcurada))
@@ -106,9 +106,9 @@ namespace Proj4
                 pbMapa.Refresh();
                 udX.Value = (decimal)arvore.Atual.Info.X;
                 udY.Value = (decimal)arvore.Atual.Info.Y;
-                pbMapa.CreateGraphics().FillEllipse(Brushes.Red, ((float)arvore.Atual.Info.X)*pbMapa.Width, ((float)arvore.Atual.Info.Y)*pbMapa.Height, 10, 10);
-                List<Ligacao> lista =  arvore.Atual.Info.ListarLigacaoCidade();
-                for(int i = 0; i <= lista.Count - 1; i++)
+                pbMapa.CreateGraphics().FillEllipse(Brushes.Red, ((float)arvore.Atual.Info.X) * pbMapa.Width, ((float)arvore.Atual.Info.Y) * pbMapa.Height, 10, 10);
+                List<Ligacao> lista = arvore.Atual.Info.ListarLigacaoCidade();
+                for (int i = 0; i <= lista.Count - 1; i++)
                 {
                     Console.WriteLine(lista[i].Destino.ToString(), lista[i].Distancia.ToString());
                     dgvLigacoes.Rows.Add();
@@ -134,7 +134,53 @@ namespace Proj4
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            arvore.GravarArquivoDeRegistros("../../Dados/cidades.dat");
+            //arvore.GravarArquivoDeRegistros("../../Dados/cidades.dat");
+        }
+
+        private void btnIncluirCaminho_Click(object sender, EventArgs e)
+        {
+            string nomeCidade = txtNomeCidade.Text;
+            Cidade cidadeProcurada = new Cidade(nomeCidade, 0, 0);
+
+            string destino = txtNovoDestino.Text;
+            Cidade cidadeDestino = new Cidade(destino, 0, 0);
+
+            string distancia = numericUpDown1.Text;
+
+            if (arvore.Existe(cidadeDestino) && arvore.Existe(cidadeProcurada))
+            {
+                Ligacao ligacao = new Ligacao() { Origem = nomeCidade.TrimEnd(), Destino = destino, Distancia = int.Parse(distancia) };
+                arvore.Atual.Info.ligacoes.InserirAposFim(ligacao);
+                arvore.Existe(cidadeDestino);
+                ligacao = new Ligacao() { Origem = destino.TrimEnd(), Destino = nomeCidade, Distancia = int.Parse(distancia) };
+                arvore.Atual.Info.ligacoes.InserirAposFim(ligacao);
+                MessageBox.Show("Ligação incluída!" + destino + distancia);
+            }
+            else
+                MessageBox.Show("Cidade não encontrada!");
+        }
+
+        private void btnExcluirCaminho_Click(object sender, EventArgs e)
+        {
+            string nomeCidade = txtNomeCidade.Text;
+            Cidade cidadeProcurada = new Cidade(nomeCidade, 0, 0);
+
+            string destino = txtNovoDestino.Text;
+            Cidade cidadeDestino = new Cidade(destino, 0, 0);
+
+            string distancia = numericUpDown1.Text;
+
+            if (arvore.Existe(cidadeDestino) && arvore.Existe(cidadeProcurada))
+            {
+                Ligacao ligacao = new Ligacao() { Origem = nomeCidade.TrimEnd(), Destino = destino, Distancia = int.Parse(distancia) };
+                arvore.Atual.Info.ligacoes.RemoverDado(ligacao);
+                arvore.Existe(cidadeDestino);
+                Ligacao ligacao2 = new Ligacao() { Origem = destino.TrimEnd(), Destino = nomeCidade, Distancia = int.Parse(distancia) };
+                arvore.Atual.Info.ligacoes.RemoverDado(ligacao2);
+                MessageBox.Show("Ligação incluída!" + destino + distancia);
+            }
+            else
+                MessageBox.Show("Cidade não encontrada!");
         }
 
         private void pbMapa_MouseDown(object sender, MouseEventArgs e)
