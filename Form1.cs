@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Proj4
@@ -30,7 +32,7 @@ namespace Proj4
         private void Form1_Load(object sender, EventArgs e)
         {
             arvore = new ArvoreAVL<Cidade>();
-            grafo = new Grafo(dgvRotas);
+            grafo = new Grafo();
             arvore.LerArquivoDeRegistros("../../Dados/cidades.dat");
             PreencherGrafo();
             StreamReader arquivo = new StreamReader("../../Dados/GrafoOnibusSaoPaulo.txt");
@@ -62,11 +64,51 @@ namespace Proj4
 
         public void PreencherGrafo()
         {
-            grafo = new Grafo(dgvRotas);
+            grafo = new Grafo();
             List<Cidade> lista = new List<Cidade>();
             arvore.VisitarEmOrdem(ref lista);
             for (int i = 0; i < lista.Count; i++)
-                grafo.NovoVertice(lista[i].Nome);
+            {
+                grafo.NovoVertice(lista[i].Nome.Trim());
+            }
+        }
+        public static string FormatarCidades(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                return text;
+            }
+
+            // 1. Normaliza a string para o formulário de decomposição (D).
+            // Isso separa caracteres acentuados em dois: o caractere base e o acento (diacrítico).
+            string normalizedString = text.Normalize(NormalizationForm.FormD);
+
+            // 2. Cria um StringBuilder para construir a nova string.
+            StringBuilder stringBuilder = new StringBuilder();
+
+            // 3. Itera sobre cada caractere na string normalizada.
+            foreach (char character in normalizedString)
+            {
+                // Obtém a categoria Unicode do caractere.
+                UnicodeCategory unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(character);
+
+                // Se a categoria NÃO for um "Marca Não-Espaçadora" (o acento),
+                // adiciona o caractere (a letra base) ao StringBuilder.
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(character);
+                }
+            }
+
+            // 4. Converte o resultado para string e trata o 'ç'.
+            string result = stringBuilder.ToString();
+
+            // Substitui 'ç' por 'c' (o processo de normalização geralmente não lida com o 'ç' desta forma).
+            result = result.Replace('ç', 'c').Replace('Ç', 'C');
+
+            // 5. Retorna a string em maiúsculas (opcional, mas recomendado para consistência)
+            // e garante que quaisquer caracteres estranhos da normalização sejam removidos.
+            return result.Normalize(NormalizationForm.FormC); // Volta para a forma composta, se necessário.
         }
 
         public void LerArquivo(StreamReader arquivo)
@@ -77,13 +119,15 @@ namespace Proj4
             {
                 linhaDeDados = arquivo.ReadLine();
                 string[] info = linhaDeDados.Split(';');
-                string cidade = info[0];
+                string cidade = FormatarCidades(info[0]);
+                
                 Cidade cidadeProcurada = new Cidade(cidade, 0, 0);
                 if (arvore.Existe(cidadeProcurada))
                 {
-                    string destino = info[1];
+                    string destino = FormatarCidades(info[1]);
                     string distancia = info[2];
 
+                    grafo.NovaAresta(grafo.ObterIndiceVertice(cidade.Trim()), grafo.ObterIndiceVertice(destino.Trim()), int.Parse(distancia));
                     Ligacao ligacao = new Ligacao() { Origem = cidade.TrimEnd(), Destino = destino, Distancia = int.Parse(distancia) };
                     arvore.Atual.Info.ligacoes.InserirAposFim(ligacao);
                 }
@@ -222,7 +266,12 @@ namespace Proj4
 
             if (arvore.Existe(cidadeDestino) && arvore.Existe(cidadeProcurada))
             {
-
+                dgvRotas.Rows.Clear();
+                var caminho = grafo.Caminho(nomeCidade.Trim(), destino.Trim());
+                for (int i = 0; i < caminho.Count; i++)
+                {
+                    dgvRotas.Rows.Add(caminho[i].Rotulo.ToString(), caminho[i].Distancia.ToString());
+                }
             }
             else
                 MessageBox.Show("Cidade não encontrada!");

@@ -39,3 +39,4 @@ C:\Users\João\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.cspr
 C:\Users\João\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.csproj.CoreCompileInputs.cache
 C:\Users\João\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.exe
 C:\Users\João\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.pdb
+C:\Users\u24146\Documents\GitHub\ProjetoIV-CadastroDeCidades\obj\Debug\Proj4.exe.config

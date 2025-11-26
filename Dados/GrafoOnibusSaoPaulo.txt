@@ -46,7 +46,7 @@ Santos;Suzano;90
 São José dos Campos;São Sebastião;111
 São José dos Campos;Caraguatatuba;91
 São José dos Campos;Taubaté;42
-São Sebastião;Caraguatatba;25
+São Sebastião;Caraguatatuba;25
 Caraguatatuba;Ubatuba;50
 Taubaté;Ubatuba;96
 Votuporanga;Rubinéia;115
