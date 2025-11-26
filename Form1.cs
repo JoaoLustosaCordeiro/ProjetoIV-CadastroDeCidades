@@ -32,6 +32,7 @@ namespace Proj4
             arvore = new ArvoreAVL<Cidade>();
             grafo = new Grafo(dgvRotas);
             arvore.LerArquivoDeRegistros("../../Dados/cidades.dat");
+            PreencherGrafo();
             StreamReader arquivo = new StreamReader("../../Dados/GrafoOnibusSaoPaulo.txt");
             LerArquivo(arquivo);
             pbMapa.Invalidate();
@@ -57,6 +58,15 @@ namespace Proj4
             }
             else
                 MessageBox.Show("Cidade já existe!");
+        }
+
+        public void PreencherGrafo()
+        {
+            grafo = new Grafo(dgvRotas);
+            List<Cidade> lista = new List<Cidade>();
+            arvore.VisitarEmOrdem(ref lista);
+            for (int i = 0; i < lista.Count; i++)
+                grafo.NovoVertice(lista[i].Nome);
         }
 
         public void LerArquivo(StreamReader arquivo)
